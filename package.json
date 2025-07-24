@@ -1,25 +1,30 @@
 {
-	"name": "throw-res",
-	"author": "Zach Sents <zach@sents.dev>",
-	"version": "0.0.1",
-	"module": "index.ts",
-	"license": "MIT",
-	"keywords": [
-		"express",
-		"response",
-		"throw",
-		"throwable"
-	],
-	"type": "module",
-	"zshy": "./src/index.ts",
-	"devDependencies": {
-		"@biomejs/biome": "2.1.2",
-		"@types/bun": "latest",
-		"@types/express": "^5.0.0",
-		"zshy": "^0.2.5"
-	},
-	"peerDependencies": {
-		"express": "^5.0.0",
-		"typescript": "^5.0.0"
-	}
+    "name": "throw-res",
+    "author": "Zach Sents <zach@sents.dev>",
+    "version": "0.0.1",
+    "module": "index.ts",
+    "license": "MIT",
+    "keywords": [
+        "express",
+        "response",
+        "throw",
+        "throwable"
+    ],
+    "type": "module",
+    "zshy": "./src/index.ts",
+    "scripts": {
+        "fix": "biome check --write --unsafe",
+        "prebuild": "bun fix",
+        "build": "zshy"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "2.1.2",
+        "@types/bun": "latest",
+        "@types/express": "^5.0.0",
+        "zshy": "^0.2.5"
+    },
+    "peerDependencies": {
+        "express": "^5.0.0",
+        "typescript": "^5.0.0"
+    }
 }
