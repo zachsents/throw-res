@@ -2,7 +2,7 @@
     "name": "throw-res",
     "author": "Zach Sents <zach@sents.dev>",
     "version": "0.0.1",
-    "module": "index.ts",
+    "module": "./dist/index.js",
     "license": "MIT",
     "keywords": [
         "express",
@@ -26,5 +26,17 @@
     "peerDependencies": {
         "express": "^5.0.0",
         "typescript": "^5.0.0"
+    },
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/index.cjs",
+    "types": "./dist/index.d.cts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.cts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
     }
 }
