@@ -13,6 +13,7 @@
     "type": "module",
     "zshy": "./src/index.ts",
     "scripts": {
+        "prepublishOnly": "bun run build",
         "fix": "biome check --write --unsafe",
         "prebuild": "bun fix",
         "build": "zshy"
