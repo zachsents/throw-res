@@ -136,7 +136,7 @@ const app = express()
 // Your routes and middleware here...
 
 // Add the throwable responses handler (must be added after your routes)
-app.use(throwableResponses)
+app.use(throwableResponses())
 
 // Your other error handlers...
 ```
@@ -188,9 +188,9 @@ app.post("/login", async (req, res) => {
 
 ### `throwableResponses` (default export)
 
-The Express error handler middleware that catches and processes throwable responses.
+A function that returns the Express error handler middleware that catches and processes throwable responses.
 
-**Type:** `ErrorRequestHandler`
+**Type:** `() => ErrorRequestHandler`
 
 ### `ThrowableResponse`
 

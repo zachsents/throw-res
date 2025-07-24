@@ -17,17 +17,17 @@ import type { ErrorRequestHandler, Handler } from "express"
  * // Your routes here...
  *
  * // Add throwable responses handler
- * app.use(throwableResponses)
+ * app.use(throwableResponses())
  *
  * // Other error handlers...
  * ```
  */
-const throwableResponses: ErrorRequestHandler = (err, req, res, next) => {
-    if (err instanceof ThrowableResponse) err.handler(req, res, next)
-    else next(err)
+export default function throwableResponses(): ErrorRequestHandler {
+    return (err, req, res, next) => {
+        if (err instanceof ThrowableResponse) err.handler(req, res, next)
+        else next(err)
+    }
 }
-
-export default throwableResponses
 
 /**
  * Base class for creating throwable HTTP responses.
@@ -140,7 +140,7 @@ export class ThrowableRedirect extends ThrowableResponse {
 
 type Json = string | number | boolean | null | JsonArray | JsonObject
 
-interface JsonArray extends Array<Json> {}
+interface JsonArray extends Array<Json> { }
 
 interface JsonObject {
     [key: string]: Json

@@ -1,7 +1,7 @@
 {
     "name": "throw-res",
     "author": "Zach Sents <zach@sents.dev>",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "module": "./dist/index.js",
     "license": "MIT",
     "keywords": [
